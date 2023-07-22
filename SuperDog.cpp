@@ -112,14 +112,7 @@ public:
         }
         
     }
-    ~Dog()
-    {
-        for (int i = 0; i < talents.size(); i++)
-            {
-                delete talents[i];
-            }
-        
-    }
+    
 };
 
 int main()
@@ -133,6 +126,10 @@ int main()
     std::cin >> tempAge;
     Dog* dog = new Dog(tempName, tempAge);
     dog->showTalents();
+    for (int i = 0; i < dog->talents.size(); i++)
+    {
+        delete dog->talents[i];
+    }
     delete dog;
 }
 
